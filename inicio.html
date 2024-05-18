@@ -4,11 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LemonCookie con Git</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <h1>Prueba de titulo</h1>
-    <img src="public/cookie-web_11zon.jpg" width="250">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa dignissimos voluptatem maxime quis magni molestias, quas officia magnam odit voluptate cupiditate asperiores, voluptates placeat minus porro corrupti sint incidunffffft perferendis?
+    <header>
+        <div class="head">
+            <img src="/public/lemon-logo.svg" alt="logo" height="50px">
+            <nav class="head--nav">
+                <span class="material-symbols-outlined">menu</span>
+<!--                 <ul>
+                    <li alt="texto" href="#">Menu 1</li>
+                    <li alt="texto" href="#">Menu 2</li>
+                    <li alt="texto" href="#">Menu 3</li>
+                    <li alt="texto" href="#">Menu 4</li>
+                    <li alt="texto" href="#">Menu 5</li>
+                </ul> -->
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <picture>
+            <source srcset="/public/cookie-web_11zon.jpg" media="(min-width: 600px)" />
+            <img src="/public/cookie-web_11zon.jpg" alt="MDN" />
+        </picture>
+        <div class="hero--content">
+            <div class="hero--content--campain">
+                    <h4>Galletas de Limón</h4>
+                    <p>S/ 5.90<span>Lunes y jueves</span></p>
+                </div>
+                <nav class="hero--content--nav">
+                    <ul>
+                        <li alt="texto" href="#">
+                            <span class="material-symbols-outlined">cookie</span>
+                            Enviame esa galleta
+                        </li>
+                        <li alt="texto" href="#">Quiero enviarla de regalo</li>
+                        <li alt="texto" href="#">Como preparo esa galleta</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <main>
+        <h1>pruebas</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quod quos hic, minus velit impedit aperiam cupiditate in dolor unde alias maxime officiis deserunt. Quod ut mollitia quas laboriosam eveniet.</p>
+    </main>
 </body>
 </html>
