@@ -1,35 +1,113 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* end fonts */
+:root {
+  --color-primary: #412624;
+  --color-primary-alpha: 65, 35, 36;
+  --color-secondary: #6b0418;
+  --color-secondary-alpha: 107, 04, 24;
+  --color-complementary: #c2c219;
+  --color-complementary-alpha: 194, 201, 25;
+  --color-variant: #d2c1a7;
+  --color-variant-alpha: 210, 193, 167;
+  --color-white: #fff;
+  --font-main: "Merriweather", serif;
+  --font-campaign: "Luckiest Guy", sans-serif;
+  --font-alternative: "Roboto Condensed", sans-serif;
+  --font-small: 0.857rem;
+  --font-large: 2.618rem;
+  --font-huge: 3.2652rem;
+  --font-base: 12px;
+  --marca: solid red 1px;
+  --fib-num: 0.1618;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Merriweather", serif;
+  font-family: var(--font-main);
 }
-:root {
-  --color-primary: #412624;
-  --color-primary-alpha: 65, 35, 36;
-  --color-secondary: #6B0418;
-  --color-secondary-aplha: 107, 04, 24;
-  --white: #fff;
+
+h1 {
+  font-size: calc(calc(calc(var(--fib-num) * 4) + 1) * 1rem);
+  padding-bottom: 1rem;
+}
+
+h2 {
+  font-size: calc(calc(calc(var(--fib-num) * 3) + 1) * 1rem);
+}
+
+h3 {
+  font-size: calc(calc(calc(var(--fib-num) * 2) + 1) * 1rem);
+}
+
+h4 {
+  font-size: calc(calc(calc(var(--fib-num) * 1) + 1) * 1rem);
+}
+p {
+  padding-bottom: 1rem;
+  font-weight: 100;
+  line-height: 1.5rem;
 }
 html {
-  background-color: #d2c1a7;
-  font-size: 14px;
+  background-color: var(--color-variant);
+  font-size: var(--font-base);
 }
 img {
   max-width: 100%;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "hero"
+    "main"
+    "aside"
+    "footer";
+}
+
+@media (min-width: 600px) {
+  :root {
+    --font-base: 14px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template:
+      "header header" auto
+      "hero   hero" 72vh
+      "main   main" auto
+      "aside  aside" auto
+      "footer footer" auto /
+      auto 300px;
+  }
+}
+@media (min-width: 900px) {
+  :root {
+    --font-base: 15px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template:
+      "header header header header" auto
+      "hero hero   hero hero" 72vh
+      ". main   main ." auto
+      ". aside  aside ." auto
+      "footer footer footer footer" auto /
+      auto 600px 300px auto;
+  }
+}
+
 header {
+  grid-area: header;
   background: linear-gradient(
     180deg,
     rgba(var(--color-primary-alpha), 0.8) 25%,
     rgba(var(--color-primary-alpha), 0) 100%
   );
-  color: var(--white);
+  color: var(--color-white);
   padding: 24px;
   .head {
     display: flex;
@@ -38,6 +116,7 @@ header {
 }
 
 .hero {
+  grid-area: hero;
   color: #fff;
   img {
     position: absolute;
@@ -51,38 +130,131 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: end;
-    border: solid red 1px;
-    gap: 24px;
+    gap: 1.5rem;
     height: 72vh;
+
     .hero--content--campain {
-      font-family: "Luckiest Guy", sans-serif;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 50px;
       background-color: rgba(var(--color-primary-alpha), 0.5);
       padding: 1.143rem;
+      * {
+        font-family: var(--font-campaign);
+        font-weight: 100;
+        letter-spacing: 0.06rem;
+      }
       h4 {
-        font-family: inherit;
-        font-size: 2.286rem;
+        font-size: var(--font-large);
+        line-height: 2.5rem;
         flex-basis: min-content;
       }
-      p {
-        font-family: inherit;
-        font-size: 2.857rem;
+      h3 {
+        font-size: var(--font-huge);
+        line-height: 3rem;
       }
       span {
-        font-family: inherit;
-        font-size: 0.857rem;
-        display: block;
+        font-size: var(--font-small);
       }
     }
     .hero--content--nav {
-      ul{
+      background: linear-gradient(
+        180deg,
+        rgba(var(--color-variant-alpha), 0) 0%,
+        rgba(var(--color-variant-alpha), 1) 80%
+      );
+      padding: 1.5rem 1.5rem 3rem 1.5rem;
+      ul {
         display: flex;
         background-color: var(--color-secondary);
+        list-style: none;
+        margin: 0 auto;
+        width: fit-content;
+        border-radius: 0.5rem;
       }
-      li{
-        text-transform: uppercase;
+      li {
+        padding: 0.5rem;
+        border-right: 1px var(--color-variant) solid;
+
+        a {
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          font-family: var(--font-alternative);
+          font-size: var(--font-small);
+          color: var(--color-white);
+          text-decoration: none;
+
+          span {
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
+          }
+        }
       }
     }
+  }
+}
+main {
+  grid-area: main;
+  .card {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem 4rem 1rem;
+    background: rgba(var(--color-primary-alpha), 0.85);
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 4px;
+    img {
+      object-fit: cover;
+      border-radius: 0.5rem 0.5rem 0 0;
+      margin-bottom: 1rem;
+    }
+    .card-tex {
+      padding: 1rem;
+      h1 {
+        color: var(--color-complementary);
+        }
+      p {
+          color: var(--color-white);
+        }  
+    }
+    
+  }
+}
+aside {
+  grid-area: aside;
+  h3 {
+    background: rgba(var(--color-secondary-alpha), 0.7);
+    color: var(--color-white);
+    padding: 1rem;
+  }
+  .gallery {
+    background: rgba(var(--color-primary-alpha), 0.3);
+    padding: 1.5rem;
+    overflow-x: scroll;
+    height: fit-content;
+    display: flex;
+
+    img {
+      border: solid var(--color-variant) 5px;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+  }
+}
+@media (min-width: 900px) {
+  h3 {
+    border-radius: 8px 8px 0 0;
+  }
+}
+footer {
+  grid-area: footer;
+  padding: 1rem;
+  background: rgba(var(--color-primary-alpha), 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  * {
+    font-family: var(--font-alternative);
+    color: var(--color-white);
   }
 }

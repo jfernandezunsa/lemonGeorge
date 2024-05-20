@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-<body>
+<body class="grid-container">
     <header>
         <div class="head">
             <img src="/public/lemon-logo.svg" alt="logo" height="50px">
@@ -33,16 +33,31 @@
         <div class="hero--content">
             <div class="hero--content--campain">
                     <h4>Galletas de Limón</h4>
-                    <p>S/ 5.90<span>Lunes y jueves</span></p>
+                    <div>
+                    <h3>S/ 5.90</h3>
+                    <span>Lunes y jueves</span>
+                    </div>
                 </div>
                 <nav class="hero--content--nav">
                     <ul>
-                        <li alt="texto" href="#">
+                        <li>
+                            <a href="#">
                             <span class="material-symbols-outlined">cookie</span>
-                            Enviame esa galleta
+                            enviar galleta
+                            </a>
                         </li>
-                        <li alt="texto" href="#">Quiero enviarla de regalo</li>
-                        <li alt="texto" href="#">Como preparo esa galleta</li>
+                        <li>
+                            <a href="#">
+                                <span class="material-symbols-outlined">featured_seasonal_and_gifts</span>
+                                para regalo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="material-symbols-outlined">local_dining</span>
+                                quiero la receta
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -50,8 +65,35 @@
 
     </div>
     <main>
-        <h1>pruebas</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quod quos hic, minus velit impedit aperiam cupiditate in dolor unde alias maxime officiis deserunt. Quod ut mollitia quas laboriosam eveniet.</p>
+        <article class="card">
+            <!-- <img src="public/cookie-mob_11zon.jpg" alt="Clock" srcset="public/cookie-mob_11zon.jpg 200w, public/cookie-mob_11zon.jpg 400w" sizes="(min-width: 600px) 200px, 50vw" /> -->
+            <img src="public/cookie-mob_11zon.jpg" alt="Clock" class="card-img"/>
+            <div class="car-tex">
+                <h1>Galletas de Limón</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend fermentum eros, semper semper ligula interdum interdum. Sed et ex a purus viverra suscipit. Maecenas pharetra sed mi sit amet volutpat. Nam pellentesque odio velit, et porttitor turpis accumsan sed. Curabitur nunc leo, efficitur sit amet nulla quis, pellentesque tempor risus. Etiam semper volutpat ante, a maximus libero vehicula a. Nulla facilisis tortor vitae finibus tempor. Integer non justo quis est gravida commodo.</p>
+            </div>
+        </article>
+        <h1>Galletas de Limón</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend fermentum eros, semper semper ligula interdum interdum. Sed et ex a purus viverra suscipit. Maecenas pharetra sed mi sit amet volutpat. Nam pellentesque odio velit, et porttitor turpis accumsan sed. Curabitur nunc leo, efficitur sit amet nulla quis, pellentesque tempor risus. Etiam semper volutpat ante, a maximus libero vehicula a. Nulla facilisis tortor vitae finibus tempor. Integer non justo quis est gravida commodo.</p>
     </main>
+    
+    <aside>
+        <h3>Otras opciones</h3>
+        <div class="gallery">
+        <img src="public/cookie-mob_11zon.jpg" alt="Clock" width="120px" height="120px"/>
+        <img src="public/cookie-mob_11zon.jpg" alt="Clock" width="120px" height="120px"/>
+        <img src="public/cookie-mob_11zon.jpg" alt="Clock" width="120px" height="120px"/>
+        <img src="public/cookie-mob_11zon.jpg" alt="Clock" width="120px" height="120px"/>
+        <img src="public/cookie-mob_11zon.jpg" alt="Clock" width="120px" height="120px"/>
+        <img src="public/cookie-mob_11zon.jpg" alt="Clock" width="120px" height="120px"/>
+        </div>
+    </aside>
+<footer>
+    <span>lemon Cookie &#169;</span>
+    <div>
+        <img src="public/facebook.png" alt="Clock" width="20px" height="20px"/>
+        <img src="public/instagram.png" alt="Clock" width="20px" height="20px"/>
+        <img src="public/brand-tiktok.png" alt="Clock" width="20px" height="20px"/>
+    </div>
 </body>
 </html>
