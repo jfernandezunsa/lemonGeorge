@@ -52,7 +52,7 @@ p {
   line-height: 1.5rem;
 }
 html {
-  background-color: var(--color-variant);
+  background-color: rgb(var(--color-variant-alpha));
   font-size: var(--font-base);
 }
 img {
@@ -112,6 +112,39 @@ header {
   .head {
     display: flex;
     justify-content: space-between;
+    .head--nav{
+      ul{
+        display: flex;
+        li{
+          list-style: none;
+          a{
+            color: var(--color-white);
+            text-decoration: none;
+            padding: 0 1rem;
+          }
+          a:hover{
+            color: var(--color-complementary);
+          }
+        }
+      }
+    }
+    /* ss */
+/*     @media (min-width: 900px) {
+      span{
+        visibility: hidden;
+      }
+      ul {
+        visibility:visible;
+      }
+    }
+    @media (max-width: 599px) {
+      span{
+        visibility: visible;
+      }
+      ul {
+        visibility:hidden;
+      }
+    } */
   }
 }
 
@@ -175,7 +208,6 @@ header {
       li {
         padding: 0.5rem;
         border-right: 1px var(--color-variant) solid;
-
         a {
           display: flex;
           align-items: center;
@@ -184,7 +216,6 @@ header {
           font-size: var(--font-small);
           color: var(--color-white);
           text-decoration: none;
-
           span {
             margin-right: 0.5rem;
             font-size: 1.5rem;
@@ -203,23 +234,31 @@ main {
     background: rgba(var(--color-primary-alpha), 0.85);
     border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 4px;
+    color: var(--color-white);
     img {
       object-fit: cover;
       border-radius: 0.5rem 0.5rem 0 0;
-      margin-bottom: 1rem;
     }
-    .card-tex {
+    .car-tex{
       padding: 1rem;
-      h1 {
+      h1{
         color: var(--color-complementary);
-        }
-      p {
-          color: var(--color-white);
-        }  
+      }
     }
-    
+  }
+  @media (min-width: 600px) {
+    .card {
+    display: flex;
+    flex-direction:row;
+    img {
+      object-fit: cover;
+      border-radius: 0.5rem 0 0 0.5rem;
+      width: 50%;
+    }
+    }
   }
 }
+
 aside {
   grid-area: aside;
   h3 {
